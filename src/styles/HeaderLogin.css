@@ -1,0 +1,90 @@
+.container-fluid {
+  width: 100%;
+  /* padding-left: 30px; */
+  overflow: auto;
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.search-input {
+  display: flex;
+  width: 400px;
+  height: 40px;
+  border: 0.5px solid #213f7d;
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.input-field {
+  width: 86%;
+  border: 0;
+  outline: 0;
+}
+
+.input-field::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #545f7d;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  border: 0.5px solid #213f7d;
+  background: white;
+  height: fit-content;
+  background: #39cdcc;
+  height: 40px;
+  width: 56px;
+  color: #f3f3f3;
+  border-radius: 0 8px 8px 0;
+}
+.user-info {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.pro-img {
+  border-radius: 50%;
+}
+
+.settings {
+  display: flex;
+  gap: 10px;
+}
+
+.settings > p {
+  color: #213f7d;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.bell {
+  font-size: 26px;
+  color: #213f7d;
+}
+
+.doc {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 18px;
+}
+
+.down {
+  color: #213f7d;
+  margin-right: 30px;
+}

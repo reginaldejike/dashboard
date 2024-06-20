@@ -1,0 +1,120 @@
+.data-table {
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  padding: 30px;
+}
+th {
+  text-align: start;
+  padding: 10px 20px;
+  color: rgba(84, 95, 125, 1);
+}
+
+td {
+  text-align: start;
+  padding: 30px 20px;
+  color: rgba(84, 95, 125, 1);
+}
+
+.data-row {
+  position: relative;
+}
+
+.data-row::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(33, 63, 125, 0.1);
+}
+
+.data-row:last-child::after {
+  display: none;
+}
+
+.t-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: rgba(84, 95, 125, 1);
+}
+
+.showing {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.number-count {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.num-dropdown {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.btn-direction {
+  border: none;
+  background: #f3f3f3;
+  padding: 5px;
+}
+
+.drop {
+  position: relative;
+}
+.btn-three-dots {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.drop-down {
+  display: block;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.04);
+  width: 180px;
+  height: 130px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -50%);
+}
+
+.drop-down > li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.drop-down-icon {
+  color: rgba(84, 95, 125, 1);
+}
+
+.hide {
+  display: none;
+}

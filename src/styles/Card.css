@@ -1,0 +1,39 @@
+.card-wrapper {
+  width: 240px;
+  height: 160px;
+  display: grid;
+  gap: 3px;
+  padding-left: 30px;
+  padding-top: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.card-title {
+  color: #545f7d;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 16.42px;
+}
+
+.card-figure {
+  color: #213f7d;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.15px;
+}
+
+.card-img-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 0;
+}
+
+.card-img {
+  z-index: 50;
+  opacity: 100%;
+}
