@@ -9,6 +9,7 @@ import {
 import { BiUserCheck, BiUserX } from "react-icons/bi";
 import { useState, useEffect, useRef } from "react";
 import data from "../Data.json";
+import { Link } from "react-router-dom";
 
 const Table = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -157,9 +158,13 @@ const Table = () => {
               key={index}
               className={`page-item ${currentPage === n ? "active" : ""}`}
             >
-              <a href="#" onClick={() => changeCurrPage(n)}>
+              <Link
+                className="page-number"
+                to={""}
+                onClick={() => changeCurrPage(n)}
+              >
                 {n}
-              </a>
+              </Link>
             </p>
           ))}
           <button className="btn-direction" onClick={nextPage}>

@@ -3,12 +3,13 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const MainLayout = () => {
   const location = useLocation();
-  const renderHeader = location.pathname === "/";
+  // const renderHeader = location.pathname === "/login";
   return (
-    <div>
-      {renderHeader && <Header />}
+    <>
+      {location.pathname === "/login" && <Header />}
+      {location.pathname === "/signup" && <Header />}
       <Outlet />
-    </div>
+    </>
   );
 };
 
