@@ -1,0 +1,15 @@
+02/15/2026	14:01:56	c8a72480-075e-4c13-8aa0-ffb92354b007	Error: Not allowed by CORS
+02/16/2026	14:38:14	a1093a91-08bf-47ed-a755-f33cea2689b6	Error: Not allowed by CORS
+03/20/2026	13:47:28	00b7d3f6-aeed-4b0e-9aa8-c10c11ea99fc	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/20/2026	13:48:50	20d38f78-f6cf-4971-8a4a-77730cc6ae7a	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/20/2026	13:51:51	b76f28f5-4a1b-411b-a886-434187481ea0	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/20/2026	13:53:18	627f1da0-9bb2-40d7-835e-21390c968e3e	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/20/2026	14:49:25	e943520e-1e0b-4f45-ac5f-8cdc15673081	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/20/2026	14:49:52	7a0f006c-554f-4342-b09a-daeb7134f182	SyntaxError: Unexpected token '}', ..."roles": 
+}" is not valid JSON
+03/20/2026	14:53:15	76ee7a6a-0c42-4d0b-8b3f-0c8d61678d0b	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+03/30/2026	12:07:38	1da3a638-ae96-43d1-b7e5-f87b8fbe9e42	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
+03/30/2026	12:11:27	51fc5ad2-57f8-4698-a955-22d515500088	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
+03/30/2026	12:14:40	76e26472-3db3-492c-8adb-76c72bbd5b69	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
+03/30/2026	12:14:51	be4bd146-965d-44b6-a25b-bca24e3a6885	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
+03/30/2026	12:23:47	15dcf1d3-7f4a-4db6-8361-5e31f7cd3344	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
