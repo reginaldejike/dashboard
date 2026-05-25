@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-date {
+  display: inline-block;
+  position: relative;
+  height: 46px;
+  width: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+.date-icon {
+  position: absolute;
+  left: 1;
+  height: fit-content;
+}
+
+.date-input {
+  height: 40px;
+  line-height: 8px;
+  padding: 5px 20px;
+  border: 2px solid grey;
+
+  border: none;
+  width: 100%;
+
+  outline: none;
+}
+
+/* .datepicker {
+  display: none;
+} */
+
+.datepicker-calender {
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+  width: 380px;
+  padding: 1rem;
+  position: relative;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.days,
+.dates {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.days {
+  font-weight: 600;
+}
+.today {
+  color: #fff;
+}
+.today::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dates li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.dates li.inactive {
+  color: #ccc;
+}
+
+.datepicker-calender .dates li {
+  width: calc(100% / 7);
+  margin-top: 25px;
+  position: relative;
+}
+.datepicker-calender .days li {
+  width: calc(100% / 7);
+  margin-top: 25px;
+  position: relative;
+}
+
+button.month-change {
+  padding: 2px 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.heading-up-down-flex {
+  position: relative;
+  display: flex;
+  gap: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.year {
+  position: absolute;
+  display: inline-block;
+  height: 200px;
+  width: 80%;
+  background: #fff;
+  top: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  z-index: 10;
+}
+
+.year::-webkit-scrollbar {
+  width: 10px;
+}
+
+.year::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.year::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.year-list {
+  display: grid;
+  place-items: center;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+.year-list:hover {
+  background: black;
+  color: white;
+}
+
+.current-year {
+  display: grid;
+  background: black;
+  color: white;
+  place-items: center;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+h3 {
+  cursor: pointer;
+}
