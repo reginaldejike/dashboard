@@ -3,27 +3,26 @@ const User = require('../model/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const handleLogin = async (res, req) => {
-  const { user, pwd } = req.body;
+const handleLogin = async (req, res) => {
+  const { email, password } = req.body;
+  console.log(req.body);
 
-  if (!user || !pwd) {
-    return res
-      .status(400)
-      .json({ message: 'Username and password is required' });
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password is required' });
   }
-  const foundUser = await User.findOne({ username: user }).exec();
+  const foundUser = await User.findOne({ email: email }).exec();
   if (!foundUser) {
     return res.sendStatus(401);
   }
-  const match = await bcrypt.compare(pwd, foundUser.password);
+  const match = await bcrypt.compare(password, foundUser.password);
   if (match) {
-    const role = Object.value(foundUser.roles);
+    const role = Object.values(foundUser.roles);
     //create Jwt
     const accessToken = jwt.sign(
       {
         userInfo: {
-          username: foundUser.username,
-          role: roles,
+          email: foundUser.email,
+          roles: { user: 1 },
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
@@ -31,7 +30,7 @@ const handleLogin = async (res, req) => {
     );
     const refreshToken = jwt.sign(
       {
-        username: foundUser.username,
+        email: foundUser.email,
       },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: '1d' },

@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/root'));
-app.use('/users', require('./routes/user'));
+app.use('/users', require('./routes/staff'));
 app.use('/login', require('./routes/auth'));
 
 app.all(/.*/, (req, res) => {

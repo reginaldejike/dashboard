@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: {
+  email: {
     type: String,
     required: true,
     unique: true,
@@ -12,12 +12,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  roles: [
-    {
-      type: String,
-      default: 'Staff',
+  roles: {
+    user: {
+      type: Number,
+      default: 2001,
     },
-  ],
+    staff: Number,
+    admin: Number,
+  },
   active: {
     type: Boolean,
     default: true,

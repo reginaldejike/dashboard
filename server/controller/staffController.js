@@ -11,35 +11,35 @@ const getAllUsers = asyncHandler(async (req, res) => {
 });
 
 const createNewUser = asyncHandler(async (req, res) => {
-  const { username, password, roles } = req.body;
-  if (!username || !password || !Array.isArray(roles) || !roles.length) {
+  const { email, password } = req.body;
+  if (!email || !password) {
     return res.status(400).json({ message: 'All fields are required' });
   }
 
-  const duplicate = await User.findOne({ username }).lean().exec();
+  const duplicate = await User.findOne({ email }).lean().exec();
 
   if (duplicate) {
-    return res.status(409).json({ message: 'Duplicate username' });
+    return res.status(409).json({ message: 'Duplicate email' });
   }
   const hashedPwd = await bcrypt.hash(password, 10);
 
-  const userObject = { username, password: hashedPwd, roles };
+  const userObject = { email, password: hashedPwd, roles: { user: 1 } };
 
   // Create and store the new user
   const user = await User.create(userObject);
 
   if (user) {
-    res.status(201).json({ message: `New user ${username} created` });
+    res.status(201).json({ message: `New user ${email} created` });
   } else {
     res.status(400).json({ message: 'Invalid user data received' });
   }
 });
 
 const updateUser = asyncHandler(async (req, res) => {
-  const { id, username, roles, active, password } = req.body;
+  const { id, email, roles, active, password } = req.body;
   if (
     !id ||
-    !username ||
+    !email ||
     !Array.isArray(roles) ||
     !roles.length ||
     typeof active !== 'boolean'
@@ -51,7 +51,7 @@ const updateUser = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: 'User not found' });
   }
 
-  const duplicate = await User.findOne({ username }).lean().exec();
+  const duplicate = await User.findOne({ email }).lean().exec();
   if (duplicate && duplicate?._id.toString() !== id) {
     return res.status(409).json({ message: 'Duplicate username' });
   }

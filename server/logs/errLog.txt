@@ -13,3 +13,14 @@
 03/30/2026	12:14:40	76e26472-3db3-492c-8adb-76c72bbd5b69	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
 03/30/2026	12:14:51	be4bd146-965d-44b6-a25b-bca24e3a6885	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
 03/30/2026	12:23:47	15dcf1d3-7f4a-4db6-8361-5e31f7cd3344	MongoServerError: E11000 duplicate key error collection: test.users index: usename_1 dup key: { usename: null }
+06/11/2026	14:39:45	b11b03fa-bfd7-4fef-8b78-aef5d55a0305	ValidationError: User validation failed: username: Path `username` is required.
+06/11/2026	15:30:34	e03afde1-c815-420c-96d0-d2629288924c	Error: Not allowed by CORS
+06/11/2026	16:40:06	eb090548-cb73-4828-ad06-5cc7c70d976d	MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null }
+06/11/2026	16:40:49	7f3492cb-b6fe-41fc-9510-4d697bfc2069	MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null }
+06/11/2026	16:44:58	fc84a11a-8e4b-4b0f-a810-0efbbac801ad	MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null }
+06/12/2026	00:47:27	de45bfd7-a709-49dd-9ada-a130332ab50f	SyntaxError: Expected ',' or '}' after property value in JSON at position 44 (line 3 column 5)
+06/12/2026	00:48:28	22c2e908-c877-4703-a294-63da76511f13	SyntaxError: Expected double-quoted property name in JSON at position 71 (line 4 column 1)
+06/12/2026	00:49:16	cff8c1a0-023f-4245-bcbb-578c59062c77	SyntaxError: Expected ',' or '}' after property value in JSON at position 44 (line 3 column 5)
+06/12/2026	00:52:31	bb390037-4086-4741-9fd5-63dcbf62f77d	SyntaxError: Expected ',' or '}' after property value in JSON at position 44 (line 3 column 5)
+06/12/2026	00:58:07	2a733606-09fa-456e-9e1a-8f5a3e0342e3	TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.
+06/12/2026	01:01:43	f82ce71c-7342-48e9-8cf8-0e18c7b0ecd9	TypeError: Cannot destructure property 'email' of 'req.body' as it is undefined.
