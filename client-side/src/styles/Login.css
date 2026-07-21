@@ -136,6 +136,17 @@ input::placeholder {
   line-height: 16.39px;
 }
 
+.login-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #39cdcc;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 16.39px;
+  margin: auto;
+}
+
 .login-button {
   text-transform: uppercase;
   width: 100%;

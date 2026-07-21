@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Aside from '../component/Aside';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface SignUp {
   email: string;
@@ -179,8 +179,11 @@ const SignUp = () => {
               </div>
 
               <button disabled={isSubmitting} className='login-button'>
-                {isSubmitting ? 'Loading..' : 'Log in'}
+                {isSubmitting ? 'Loading..' : 'Sign Up'}
               </button>
+              <Link className='login-link' to={'/login'}>
+                Login
+              </Link>
               {errors.root && (
                 <div className='text-color'> {errors.root.message}</div>
               )}
