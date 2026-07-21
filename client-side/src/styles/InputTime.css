@@ -1,0 +1,77 @@
+.custom-time {
+  display: inline-block;
+  position: relative;
+  height: 46px;
+  width: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.time-input {
+  height: 40px;
+  line-height: 8px;
+  padding: 5px 20px;
+  border: 2px solid grey;
+  border: none;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.time-picker-wrapper {
+  width: 200px;
+  display: grid;
+  place-items: center;
+}
+.time-picker {
+  width: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+}
+
+.time-icon {
+  cursor: pointer;
+}
+
+.meridian {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.meridian > h3:hover {
+  color: blue;
+  cursor: pointer;
+}
+.selected {
+  color: blue;
+  cursor: pointer;
+}
+
+.time-container {
+  text-align: center;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.time-order-list {
+  list-style: none;
+  height: 100%;
+}
+
+.time-list {
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+.time-list:hover {
+  background: black;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
