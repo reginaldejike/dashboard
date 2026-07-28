@@ -106,7 +106,7 @@ const Login = () => {
                 )}
               </div>
               <div className='forget-signup-button'>
-                <Link className='forget-password' to={''}>
+                <Link className='forget-password' to={'/forgot-password'}>
                   Forget password?{' '}
                 </Link>
                 <Link className='forget-password' to={'/signup'}>
