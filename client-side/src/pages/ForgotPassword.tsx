@@ -17,20 +17,21 @@ const ForgotPassword = () => {
 
   const navigate = useNavigate();
 
-  const loginUser = async (userData: ForgotPassword) => {
-    const response = await fetch('http://localhost:5000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
-    return response.json();
-  };
+  // const loginUser = async (userData: ForgotPassword) => {
+  //   const response = await fetch('http://localhost:5000/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(userData),
+  //   });
+  //   return response.json();
+  // };
 
   const onSubmit: SubmitHandler<ForgotPassword> = async (data) => {
     try {
-      await loginUser(data);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
       navigate('/dashboard');
     } catch (error) {
       setError('root', {
