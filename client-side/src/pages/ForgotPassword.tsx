@@ -32,7 +32,7 @@ const ForgotPassword = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log(data);
-      navigate('/dashboard');
+      navigate('/otp');
     } catch (error) {
       setError('root', {
         message: 'Invalid email',

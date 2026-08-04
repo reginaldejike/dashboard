@@ -13,6 +13,7 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
+import Otp from './pages/Otp';
 
 function App() {
   const router = createBrowserRouter(
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/otp' element={<Otp />} />
         <Route path='/dashboard' element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path='user' element={<User />} />
