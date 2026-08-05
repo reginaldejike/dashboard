@@ -9,6 +9,7 @@ const MainLayout = () => {
       {location.pathname === '/login' && <Header />}
       {location.pathname === '/signup' && <Header />}
       {location.pathname === '/forgot-password' && <Header />}
+      {location.pathname === '/otp' && <Header />}
       <Outlet />
     </>
   );
