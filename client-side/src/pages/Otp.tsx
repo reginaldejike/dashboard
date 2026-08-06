@@ -4,7 +4,7 @@ import Aside from '../component/Aside';
 import '../styles/otp.css';
 
 interface OtpForm {
-  otp: '';
+  otp: string;
 }
 const Otp = () => {
   const [otp, setOtp] = useState(Array(6).fill(''));
@@ -36,34 +36,63 @@ const Otp = () => {
     }
   };
 
+  const onSubmit: SubmitHandler<OtpForm> = async (data) => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
+      data.otp = otp.join('');
+
+      // navigate('/otp');
+    } catch (error) {
+      setError('root', {
+        message: 'Invalid OTP',
+      });
+    }
+  };
+
   return (
     <div className='container'>
       <div className='login'>
         <Aside />
         <div className='otp-section'>
-          {otp.map((digit, index) => (
-            <input
-              key={index}
-              type='text'
-              inputMode='numeric'
-              maxLength={1}
-              value={digit}
-              onChange={(e) => handleChange(e.target.value, index)}
-              onKeyDown={(e) => handleKeyDown(e, index)}
-              ref={(el) => {
-                if (inputs.current) {
-                  inputs.current[index] = el;
-                }
-              }}
-              className='otp-input'
-              // style={{
-              //   width: '50px',
-              //   height: '50px',
-              //   textAlign: 'center',
-              //   fontSize: '20px',
-              // }}
-            />
-          ))}
+          <h3>Enter OTP</h3>
+
+          <form onSubmit={handleSubmit(onSubmit)} className='otp-form'>
+            <div className='otp-inputs'>
+              {otp.map((digit, index) => (
+                <input
+                  {...register('otp', {
+                    required: 'OTP is required',
+                    pattern: /^\d{6}$/,
+                  })}
+                  key={index}
+                  type='text'
+                  inputMode='numeric'
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleChange(e.target.value, index)}
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  ref={(el) => {
+                    if (inputs.current) {
+                      inputs.current[index] = el;
+                    }
+                  }}
+                  className='otp-input'
+                />
+              ))}
+            </div>
+            {errors.otp && (
+              <div className='text-color'> {errors.otp.message}</div>
+            )}
+            <div>
+              <button disabled={isSubmitting} className='login-button'>
+                {isSubmitting ? 'Loading..' : 'Submit OTP'}
+              </button>
+            </div>
+            {errors.root && (
+              <div className='text-color'> {errors.root.message}</div>
+            )}
+          </form>
         </div>
       </div>
     </div>
