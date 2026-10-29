@@ -12,14 +12,22 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+
   roles: {
     user: {
       type: Number,
       default: 2001,
     },
-    staff: Number,
-    admin: Number,
+    staff: {
+      type: Number,
+      default: 1001,
+    },
+    admin: {
+      type: Number,
+      default: 1000,
+    },
   },
+
   active: {
     type: Boolean,
     default: true,

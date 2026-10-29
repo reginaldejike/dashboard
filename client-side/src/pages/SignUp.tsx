@@ -39,7 +39,7 @@ const SignUp = () => {
   // };
 
   const registerUser = async (userData: Omit<SignUp, 'confirmPassword'>) => {
-    const response = await fetch('http://localhost:5000/users', {
+    const response = await fetch('http://localhost:5000/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,6 +48,7 @@ const SignUp = () => {
     });
 
     const data = await response.json();
+    console.log(data);
     if (!response.ok) throw new Error(data.message);
 
     return data;
@@ -55,7 +56,7 @@ const SignUp = () => {
 
   const onSubmit: SubmitHandler<SignUp> = async (data) => {
     try {
-      const { confirmPassword: _confirmPassword, ...userData } = data;
+      const { ...userData } = data;
       await registerUser(userData);
       navigate('/dashboard');
     } catch (error: unknown) {

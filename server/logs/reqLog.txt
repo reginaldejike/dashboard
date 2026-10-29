@@ -81,3 +81,16 @@
 06/12/2026	01:27:55	b7477537-41a6-4758-adca-3e6ff2c3ddcd	POST	undefined	/login
 06/12/2026	01:29:23	e4d32a19-2fb3-4ef1-8068-f71ddbecc19c	OPTIONS	http://localhost:5173	/login
 06/12/2026	01:29:23	cb9ae98d-4b0d-4fd9-8bf0-265867f8c82e	POST	http://localhost:5173	/login
+10/27/2026	15:00:00	e7c8e75a-1844-4f95-814b-afbab5019052	OPTIONS	http://localhost:5173	/login
+10/27/2026	15:00:00	c84c23aa-367f-461a-9cf7-23e0a43529ed	POST	http://localhost:5173	/login
+10/27/2026	15:07:40	dede3926-8862-414c-814f-9f0f46f1c579	OPTIONS	http://localhost:5173	/login
+10/27/2026	15:07:40	619fb4ac-9230-49c5-a5f8-67ebbae6e998	POST	http://localhost:5173	/login
+10/28/2026	10:51:04	f20fe4db-09d2-4651-ab6d-d962c8ee77c7	POST	undefined	/register
+10/28/2026	10:53:28	7892d1c3-b48e-4332-a5bf-8e80c6c54232	POST	undefined	/register
+10/28/2026	10:53:55	61bf099a-aa96-4911-808c-0b4b79997b33	POST	undefined	/register
+10/29/2026	00:51:18	4e5a0134-a149-4ab1-a533-5f0de27860ed	OPTIONS	http://localhost:5173	/users
+10/29/2026	00:51:18	0d6786e0-9b94-4832-8ed7-5478329c45c2	POST	http://localhost:5173	/users
+10/29/2026	01:01:59	5ad92e5a-7bd6-4472-9d75-725b63c9bba2	OPTIONS	http://localhost:5173	/register
+10/29/2026	01:01:59	148ea4bf-9a68-4165-b746-4288873203d5	POST	http://localhost:5173	/register
+10/29/2026	01:03:28	a251797d-5bd5-4645-9210-73018c74b70c	POST	http://localhost:5173	/register
+10/29/2026	01:03:28	7f58d086-ab88-4c04-91f1-c1049896065b	OPTIONS	http://localhost:5173	/register

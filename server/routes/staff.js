@@ -7,8 +7,8 @@ const varifyRoles = require('../middleware/verifyRoles');
 router
   .route('/')
   .get(staffController.getAllUsers)
-  .post(verifyRoles(ROLE_LIST.admin), staffController.createNewUser)
-  .patch(verifyRoles(ROLE_LIST.admin), staffController.updateUser)
-  .delete(verifyRoles(ROLE_LIST.admin), staffController.deleteUsers);
+  .post(verifyRoles(ROLE_LIST.user), staffController.createNewUser)
+  .patch(verifyRoles(ROLE_LIST.user), staffController.updateUser)
+  .delete(verifyRoles(ROLE_LIST.user), staffController.deleteUsers);
 
 module.exports = router;

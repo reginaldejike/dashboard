@@ -8,10 +8,12 @@ interface OtpForm {
 }
 const Otp = () => {
   const [otp, setOtp] = useState(Array(6).fill(''));
+  const [isComplete, setIsComplete] = useState(false);
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
   const {
     register,
     handleSubmit,
+    setValue,
     setError,
     formState: { errors, isSubmitting },
   } = useForm<OtpForm>();
@@ -21,6 +23,11 @@ const Otp = () => {
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
+
+    setValue('otp', newOtp.join(''), {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
 
     if (value && index < otp.length - 1) {
       inputs.current[index + 1]?.focus();
@@ -40,9 +47,8 @@ const Otp = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log(data);
-      data.otp = otp.join('');
-
-      // navigate('/otp');
+      setIsComplete(true);
+      setOtp(Array(6).fill(''));
     } catch (error) {
       setError('root', {
         message: 'Invalid OTP',
@@ -55,44 +61,59 @@ const Otp = () => {
       <div className='login'>
         <Aside />
         <div className='otp-section'>
-          <h3>Enter OTP</h3>
+          {!isComplete ? (
+            <>
+              <h3>Enter OTP</h3>
 
-          <form onSubmit={handleSubmit(onSubmit)} className='otp-form'>
-            <div className='otp-inputs'>
-              {otp.map((digit, index) => (
+              <form onSubmit={handleSubmit(onSubmit)} className='otp-form'>
                 <input
+                  type='hidden'
                   {...register('otp', {
                     required: 'OTP is required',
-                    pattern: /^\d{6}$/,
+                    pattern: {
+                      value: /^\d{6}$/,
+                      message: 'OTP must be 6 digits',
+                    },
                   })}
-                  key={index}
-                  type='text'
-                  inputMode='numeric'
-                  maxLength={1}
-                  value={digit}
-                  onChange={(e) => handleChange(e.target.value, index)}
-                  onKeyDown={(e) => handleKeyDown(e, index)}
-                  ref={(el) => {
-                    if (inputs.current) {
-                      inputs.current[index] = el;
-                    }
-                  }}
-                  className='otp-input'
                 />
-              ))}
+                <div className='otp-inputs'>
+                  {otp.map((digit, index) => (
+                    <input
+                      key={index}
+                      type='text'
+                      inputMode='numeric'
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleChange(e.target.value, index)}
+                      onKeyDown={(e) => handleKeyDown(e, index)}
+                      ref={(el) => {
+                        if (inputs.current) {
+                          inputs.current[index] = el;
+                        }
+                      }}
+                      className='otp-input'
+                    />
+                  ))}
+                </div>
+                {errors.otp && (
+                  <div className='text-color'> {errors.otp.message}</div>
+                )}
+                <div>
+                  <button disabled={isSubmitting} className='login-button'>
+                    {isSubmitting ? 'Loading..' : 'Submit OTP'}
+                  </button>
+                </div>
+                {errors.root && (
+                  <div className='text-color'> {errors.root.message}</div>
+                )}
+              </form>
+            </>
+          ) : (
+            <div className='success-message'>
+              <h3>OTP Verified Successfully!</h3>
+              <p>You can now proceed to reset your password.</p>
             </div>
-            {errors.otp && (
-              <div className='text-color'> {errors.otp.message}</div>
-            )}
-            <div>
-              <button disabled={isSubmitting} className='login-button'>
-                {isSubmitting ? 'Loading..' : 'Submit OTP'}
-              </button>
-            </div>
-            {errors.root && (
-              <div className='text-color'> {errors.root.message}</div>
-            )}
-          </form>
+          )}
         </div>
       </div>
     </div>
